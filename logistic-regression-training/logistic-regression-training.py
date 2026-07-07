@@ -19,10 +19,10 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
 
     for i in range(steps):
 
-        p = _sigmoid(X.dot(w)+b)
+        p = _sigmoid(np.dot(X,w)+b)
 
 
-        gradient_w = (X.T.dot(p-y))/n
+        gradient_w = np.dot(X.T,(p-y))/n
         gradient_b = np.mean(p-y)
 
         w = w-lr*gradient_w
